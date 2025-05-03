@@ -1,0 +1,558 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    font-family:'Lilita one', Courier, monospace;
+    transition: background-color ease 0.5s;
+    /*animation: Wave 5s infinite ease-in-out;
+    background: linear-gradient(270deg, #00f5d4, #9b5de5, #f15bb5, #00bbf9);*/
+}
+
+body.dark{
+    background-color: #343434;
+    color: white;
+    transition: background-color ease-in-out 0.5s;
+}
+
+body.orange{
+    background-color: orange;
+    transition: background-color ease-in-out 0.5s;
+}
+
+
+#bitcoin{
+    animation: Wave 1s infinite ease-in-out;
+    height: 5em;
+    width: 5em;
+    margin-bottom: 1em;
+    padding: 0.1em;
+    position: fixed;
+    left: 65rem;
+    bottom: 0.1em;
+}
+
+#bitcoin:hover{
+    cursor: pointer;
+}
+
+#bitcoin:hover + body{
+    background-color: orange;
+}
+
+@keyframes Wave {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+    0%{
+        transform: translateX(0);
+    }
+  }
+
+
+/*45deg, #FAA0A0 50%, #343434 50%);
+    }
+    100%{
+        background-image:  linear-gradient(45deg, white 50%, #DC143C 50%);*/
+
+#container{
+    display: grid;
+    grid-template-columns: 300px 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    height: 100vh;
+}
+
+#sidebar{
+    display: grid;
+    grid-column: 1;
+    grid-row: 2 / -1;
+    width: 20rem;
+}
+
+#showAll{
+    animation: showAll 5s infinite ease-in-out;
+}
+
+@keyframes showAll {
+    0%{
+        background-color: #FAA0A0;
+    }
+    33%{
+        background-color: #F0E68C;
+    }
+    66%{
+        background-color: #B0C4DE;
+    }
+    100% {
+        background-color: #FAA0A0;
+    }
+}
+
+#page-color{
+    display: grid;
+    grid-row: 1;
+    grid-column: -1;
+    height: 2.5em;
+    width: 2.5em;
+    margin: 1em;
+}
+
+#page-color:hover{
+    cursor: pointer;
+}
+
+#lateral-bar{
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    grid-row: 1 / 6;
+    grid-column: 1;
+    width: 19rem;
+    color: brown;
+    align-items: start;
+    justify-content: start;
+    gap: 25px;
+    border: 1px solid brown;
+    border-top: none;
+    border-left: none;
+    border-radius: 1em;
+    box-shadow: 0.5em 0.5em 1em grey,
+    -0.5em -0.5em 1em ;
+}
+
+#inputSearchField{
+    width: 100%;
+    height: 2em;
+    outline: none;
+    border-radius: 1em;
+    border: 1px solid ;
+}
+
+#lateral-bar div {
+    width: 95%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 5px;
+}
+
+#addTask{
+    margin-top: 7em;
+}
+
+
+#lateral-bar #hig:hover{
+	background-color:#FAA0A0;
+    color: white;
+}
+
+
+#lateral-bar #mid:hover{
+	background-color:#F0E68C;
+    color: white;
+}
+
+#lateral-bar #low:hover{
+	background-color:#B0C4DE;
+    color: white;
+}
+
+
+#lateral-bar:hover{
+    cursor: pointer;
+}
+
+.bin{
+    position: absolute;
+    align-self: end;
+    justify-self: end;
+    margin: 1.5em;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.bin:hover{
+    cursor: pointer;
+}
+
+#tasks{
+    display: grid;
+    grid-column: 2 / -1;
+    grid-row: 2 / 5;
+    gap: 10px;
+    margin: 20px;
+    margin-right: 80px;
+    margin-bottom: 5em;
+}
+
+#tasks{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+#tasks p:first-of-type{
+    font-family: 'Quicksand', sans-serif;
+}
+
+#tasks p:nth-of-type(n+2){
+    font-family: 'Roboto', sans-serif;
+}
+
+#tasks h3, p, .dots, .selectedDots{
+    margin: 1em;
+}
+#bottom{
+    display: grid;
+    grid-column: 2 / -1;
+    grid-row: 7;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.task{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid brown;
+    max-width: 30em;
+    max-height: 20em;
+    overflow-wrap: break-word;
+    border-radius: 1em;
+    box-shadow: 10px 10px 15px 	#343434, 
+              -5px -5px 10px grey;
+}
+
+#input{
+    display: grid;
+    position: relative;
+    grid-column: 2 / -1;
+    grid-row: 1;
+    margin: 15px;
+}
+
+#title{
+    border: none;
+    width: 10rem;
+    justify-self: center;
+    background: white;
+    border-top-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    outline: none;
+    text-align: center;
+    box-shadow: 2px 2px 5px grey,
+              -5px -5px 5px grey;
+}
+
+#text{
+    border-radius: 1em;
+    border: none;
+    width: 40rem;
+    justify-self: center;
+    padding: 25px;
+    background-color: white;
+    outline: none;
+    box-shadow: 5px 5px 10px 	#A9A9A9, 
+              -2px -2px 10px #A9A9A9;
+}
+
+#data{
+    width: 8em;
+    height: 2.5em;
+    margin-top: 1em;
+    border-radius: 1em;
+    border: 1px solid black;
+    background-color: brown;
+    color: white;
+    outline: none;
+    border: none;
+    padding-left: 0.5em;
+}
+
+#prioridade{
+    margin-top: 1em;
+}
+
+span{
+    margin-top: 1em;
+}
+
+.labels{
+    margin-top: 1em;
+}
+
+#hora{
+    width: 8em;
+    height: 2.5em;
+    margin-top: 1em;
+    border-radius: 1em;
+    border: 1px solid black;
+    background-color: brown;
+    color: white;
+    outline: none;
+    border: none;
+    padding-left: 0.5em;
+}
+
+#hora:hover{
+    cursor: pointer;            
+}
+
+
+#data:hover{
+    cursor: pointer;
+}
+
+
+#select{
+    display: flex;
+    gap: 2em;
+    justify-self: center;
+}
+
+button{
+    background-color: transparent;
+    background: maroon;
+    color: white;
+    border-radius: 1em;
+    border: none;
+    width: 8em;
+    margin-top: 1em;
+    height: 2.5em;
+    transition: background-color ease 0.5s;
+    font-family: 'Lilita one', Courier, monospace;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.open-lateral-bar{
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    height: 30px;
+    width: 30px;
+    margin: 20px;
+}
+
+.close-lateral-bar{
+    display: grid;
+    position: absolute;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    height: 30px;
+    width: 30px;
+    margin: 20px;
+}
+
+.close.open-lateral-bar:hover{
+    cursor: pointer;
+}
+
+.open-lateral-bar:hover{
+    cursor: pointer;
+}
+
+#section{
+    display: flex;
+    position: fixed;
+    align-self: center;
+    flex-direction: column;
+    gap: 0.5em;
+    grid-column: 2 / -1 ;
+    grid-row: 2 / 5;
+    justify-self: center;
+    width: 60em;
+    height: 25em;
+    background-color: white;
+    border-radius: 2em;
+    box-shadow: 10px 10px 15px black, 
+              -5px -5px 10px grey;
+}
+
+#section button{
+    align-self: center;
+    margin-bottom: 0.2em;
+}
+
+#flowTitle{
+    width: 10rem;
+    border: 1px solid brown;
+    height: 2em;
+    align-self: center;
+    border-top-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    outline: none;
+    text-align: center;
+}
+
+#flowText{
+    resize: both;
+    max-width: 90%;
+    min-height: 7em;
+    overflow: auto;
+    border: 1px solid brown;
+    margin: 1em;
+    align-self: center;
+    border-radius: 0.2em;
+    padding: 0.5em;
+    min-width: 80%; 
+    outline: none;
+}
+
+#flowData{
+    width: 8em;
+    height: 2.5em;
+    border-radius: 1em;
+    border: 1px solid black;
+    background-color: brown;
+    color: white;
+    outline: none;
+    border: none;
+    padding-left: 0.5em;
+    align-self: center;
+}
+
+#flowHour{
+    width: 8em;
+    height: 2.5em;
+    border-radius: 1em;
+    border: 1px solid black;
+    background-color: brown;
+    color: white;
+    outline: none;
+    border: none;
+    padding-left: 0.5em;
+    align-self: center;
+}
+
+
+.dots{
+    border-radius: 100%;
+    height: 1em;
+    width: 1em;
+}
+
+.selectedDots{
+    border-radius: 100%;
+    height: 1em;
+    width: 1em;
+}
+
+#redDot{
+    background-color:#FAA0A0;
+}
+
+#yellowDot{
+    background-color: #F0E68C;
+}
+
+#blueDot{
+    background-color: #B0C4DE;
+}
+
+#low-check{
+    color: #B0C4DE;
+    text-shadow: 0.5px 0.5px  #343434;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+#high-check{
+    color: #FAA0A0;
+    text-shadow: 0.5px 0.5px  #343434;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+#mid-check{
+    color: #F0E68C;
+    text-shadow: 0.5px 0.5px  #343434;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+#close{
+    display: grid;
+    height: 1em;
+    align-self: flex-end;
+    margin-right: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0px;
+    color: black;
+}
+
+#close:hover{
+    color: red;
+    cursor: pointer;
+}
+
+#importanceDiv{
+    display: flex;
+    max-height: 3.2em;
+    gap: 0.2em;
+    align-self: center;
+}
+
+.importanceText{
+    color: black;
+}
+
+#flowBtn{
+    margin: 0%;
+}
+
+
+#redDotFlow{
+    background-color:#FAA0A0;
+    border-radius: 100%;
+    height: 1em;
+    width: 1em;
+}
+
+#yellowDotFlow{
+    background-color: #F0E68C;
+    border-radius: 100%;
+    height: 1em;
+    width: 1em;
+}
+
+#blueDotFlow{   
+    background-color: #B0C4DE;
+    border-radius: 100%;
+    height: 1em;
+    width: 1em;
+}
+
+#searchFieldFiel{
+    display: grid;
+    display: flex;
+    position: fixed;
+    align-self: center;
+    flex-direction: column;
+    gap: 0.5em;
+    grid-column: 2 / -1 ;
+    grid-row: 2 / 5;
+    justify-self: center;
+    width: 10em;
+    height: 10em;
+    background-color: black;
+    border-radius: 2em;
+    box-shadow: 10px 10px 15px black, 
+              -5px -5px 10px grey;
+}

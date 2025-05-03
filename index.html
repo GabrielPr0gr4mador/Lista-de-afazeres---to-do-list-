@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+<script defer src="main.js"></script></head>
+<body>
+    <div id="container">
+
+        <!--<img src="/public/img/sidebar.jpg" alt="sidebar" id="sidebar">-->
+        <img src="c8e34094eed97365f6ce.png" alt="theme" id="page-color">
+        <section id="input">
+            <input type="text" id="title" placeholder="Title (study)" required maxlength="50">
+            <input type="text" id="text" placeholder="study math tomorrow... (max caracter 150)" required maxlength="150">
+
+            <div id="select">
+            <label for="" class="labels">Data:</label>
+            <input type="date" id="data" name="data" required>
+            <label for="" class="labels">Hora:</label> 
+            <input type="time" id="hora" name="hora" required>
+
+            <span>Prioridade:</span>
+
+            <div id="prioridade">
+            <label for="" id="high-check">Alta</label>
+            <input type="checkbox" id="high" class="dots">
+            <label for="" id="mid-check">Média</label>
+            <input type="checkbox" id="midd" class="dots">
+            <label for="" id="low-check">Baixa</label>
+            <input type="checkbox" id="loww" class="dots">
+            </div>
+
+            <button class="input-btn">Adicionar</button>
+            </div>
+        </section>
+
+        <!--<div class="open-lateral-bar">☰</div> -->
+
+        <img src="34cb3f6e53de27f3ef5d.png" class="open-lateral-bar" alt="">
+
+        <div id="lateral-bar">
+            <div id="addTask">Adicionar Tarefa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +</div>
+            <div>Buscar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🔍</div>
+            <div>Prioridade:</div>
+            <div id="hig">Alta</div>
+            <div id="mid">Média</div>
+            <div id="low">Baixa</div> 
+        </div>
+        <div id="tasks">
+           <!-- <div class="task">test</div>
+            <div class="task">test</div>
+            <div class="task">test</div>
+            <div class="task">test</div>
+            <div class="task">test</div>
+            <div class="task">test</div> -->
+        </div>
+
+        <div id="bottom">
+            GITHUB
+        </div>
+    </div>
+</body>
+</html>
